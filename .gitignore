@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# dependencies / build output (this plugin needs neither yet)
+node_modules/
+dist/
+*.tsbuildinfo
+
+# local scratch
+*.log
+tmp/
+.env
+.env.*

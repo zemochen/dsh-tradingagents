@@ -1,0 +1,11 @@
+# Bundle patch: inserts this plugin's Host row into every profile that selects
+# this bundle. The row `id` is what `dsh` shows in the plugin inventory and what
+# later override layers target; `name` is the npm package the Loader resolves
+# (the package's exports["."] = ./index.js, the Host half).
+#
+# The client half (client.js) is discovered separately: the Host scans active
+# Loader entries for packages declaring `dsh.client` and serves each one's
+# exports["./client"] bundle. No second row is needed for the browser half.
+- insert:
+    - id: dsh-tradingagents
+      name: '@local/dsh-tradingagents'

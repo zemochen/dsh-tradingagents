@@ -1,0 +1,40 @@
+{
+  "name": "@local/dsh-tradingagents",
+  "version": "0.0.0",
+  "private": true,
+  "description": "A-share multi-agent research panel for DSH: three analysis tiers, report history, watchlist and a virtual paper account (research only).",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "scripts": {
+    "check": "node scripts/check-client.mjs"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "icon.svg",
+    "cordis.patch.yml",
+    "locale/**",
+    "src/**",
+    "scripts/**",
+    "docs/**",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-ui-layout"
+      ]
+    }
+  }
+}
